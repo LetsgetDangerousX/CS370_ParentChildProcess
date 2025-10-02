@@ -1,11 +1,3 @@
-/**
- * PerfectSquare.c: Prints whether the number is a perfect square, 
- * then returns the number itself.
- * 
- * Tested with gcc -o PerfectSquare PerfectSquare.c -lm
- *  ./PerfectSquare 5
- * return not perfect for 5 and perfect for 16
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,9 +20,9 @@ int main(int argc, char *argv[]) {
 
 
     if(isPerfectSquare(number)) {
-        printf("PerfectSquare (PID: %d): %d is a PerfectSquare\n", getpid(), number);
+        printf("PerfectSquare: %d is a Perfect Square\n", number);
     }else{
-        printf("PerfectSquare (PID: %d): %d is not a PerfectSquare\n", getpid(), number);
+        printf("PerfectSquare: %d is Not a Perfect Square\n", number);
     }
 
     exit(number);

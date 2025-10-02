@@ -31,10 +31,10 @@ long long factorial(int i){
     
 
     if(result <= 255){
-        printf("returned Factorial (PID %d): %d! = %lld\n", getpid(), number, result);
+        printf("Factorial: %d! = %lld\n", number, result);
         exit(result);
     }else{
-        printf("returned Factorial (PID %d): %d! = %lld (returning %d)\n",
-         getpid(), number, result, number % 255); exit(number % 255);}
+        printf("Factorial: %d! = %lld\n",
+          number, result); exit(number % 255);}
 
  }
