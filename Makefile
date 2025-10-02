@@ -4,7 +4,7 @@ C_OBJS = Generator.o OddEven.o PerfectSquare.o Factorial.o
 #C_HEADERS
 
 OBJS = ${C_OBJS}
-EXE1 = generate
+EXE1 = generator
 EXE2 = OddEven
 EXE3 = PerfectSquare
 EXE4 = Factorial
