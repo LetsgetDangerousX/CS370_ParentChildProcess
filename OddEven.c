@@ -14,7 +14,7 @@
 int main(int argc, char *argv[] )
 {
     if(argc != 2) {
-        printf("OddEven : Error - expected 1 argument]n");
+        printf("OddEven : Error - expected 1 argument\n");
         exit(1);
     }
 

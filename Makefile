@@ -4,7 +4,7 @@ C_OBJS = Generator.o OddEven.o PerfectSquare.o Factorial.o
 #C_HEADERS
 
 OBJS = ${C_OBJS}
-EXE1 = generator
+EXE1 = Generator
 EXE2 = OddEven
 EXE3 = PerfectSquare
 EXE4 = Factorial
@@ -36,7 +36,7 @@ $(C_OBJS): ${C_HEADERS}
 #cleanup directory
 
 clean:
-	rm -f *.o *- $(EXE1) $(EXE2) $(EXE3) $(EXE4)
+	rm -f *.o $(EXE1) $(EXE2) $(EXE3) $(EXE4)
 
 package:
 	zip -r Amber-Ferrell-HW2.zip Generator.c OddEven.c PerfectSquare.c Factorial.c Makefile README.txt

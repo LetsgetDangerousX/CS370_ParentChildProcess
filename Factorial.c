@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 // helper
-int factorial(int i){
+long long factorial(int i){
     if (i == 0 || i == 1) return 1; // 0! and !1 = 1
     return i * factorial(i - 1);
 }
@@ -27,9 +27,14 @@ int factorial(int i){
 
     int number = atoi(argv[1]);
     
-    int value = factorial(number);
-    printf("Factorial (PID %d): %d! = %d\n", getpid(), number, value);
+   long long result = factorial(number);
+    
 
-    if(value <= 255){exit(value);}else{exit(number % 255);}
+    if(result <= 255){
+        printf("returned Factorial (PID %d): %d! = %lld\n", getpid(), number, result);
+        exit(result);
+    }else{
+        printf("returned Factorial (PID %d): %d! = %lld (returning %d)\n",
+         getpid(), number, result, number % 255); exit(number % 255);}
 
  }

@@ -31,13 +31,15 @@ int main(int argc, char *argv[]) {
         perror("Error opening file");
         return 1;
      }
-    
+     
+
      // set the buffert to hold eeach line from file
      char line[100];
 
      //read each line from the file:
 
-     while(fgets(line, sizeof(line), file)) {
+     while(fgets(line, sizeof(line), file)) {    
+      if(strlen(line) <= 1) continue;
       int status;                   // variable to hold child exit status
       int inputNum = atoi(line);       // number from input file
       int result;                   // result passed from child to child
