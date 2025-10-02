@@ -1,0 +1,41 @@
+
+
+
+
+Generator.c         → The main program (parent).
+
+OddEven.c           → Child #1: Checks if a number is odd/even.
+
+PerfectSquare.c     → Child #2: Checks if number is a perfect square.
+
+Factorial.c         → Child #3: Calculates factorial (with exit code as return).
+
+
+, starting with first child:
+
+,, Job:
+
+, Takes a number as a command-line argument.
+
+, Prints whether the number is odd or even.
+
+, Returns the number as its exit status.
+
+
+,, atoi() → converts string to integer
+
+,, getpid() → gets current process ID
+
+,, exit(status) → returns status to parent process
+
+
+Second Child: PerfectSquare.c
+
+,, job: 
+
+,takes a number from Generator (which came from OddEven)
+
+,Checks if it is a perfect square
+
+,Returns the number again (same as input)
+

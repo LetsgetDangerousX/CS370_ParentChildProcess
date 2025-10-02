@@ -5,9 +5,9 @@ C_OBJS = Generator.o OddEven.o PerfectSquare.o Factorial.o
 
 OBJS = ${C_OBJS}
 EXE1 = generate
-EXE2 = childTask1
-EXE3 = childTask2
-EXE4 = childTask3
+EXE2 = OddEven
+EXE3 = PerfectSquare
+EXE4 = Factorial
 
 #compiler and loader commands and flags
 GCC = gcc
@@ -19,15 +19,15 @@ LD_FLAGS  = -std=c11 -g -Wall -I.
 	$(GCC) $(GCC_FLAGS) $<
 
 #target is the executable
-all: generate childTask1 childTask2 childTask3
-fork: Generator.o
+all: $(EXE1) $(EXE2) $(EXE3) $(EXE4)
+$(EXE1): Generator.o
 	$(GCC) $(LD_FLAGS) Generator.o -o $(EXE1)
-childTask1: OddEven.o  
+$(EXE2): OddEven.o  
 	$(GCC) $(LD_FLAGS) OddEven.o   -o $(EXE2)
-childTask2: Factorial.o  
-	$(GCC) $(LD_FLAGS) Factorial.o   -o $(EXE3)
-childTask3:PerfectSquare.o  
-	$(GCC) $(LD_FLAGS) PerfectSquare.o   -o $(EXE4)
+$(EXE3): PerfectSquare.o
+	$(GCC) $(LD_FLAGS) PerfectSquare.o  -o $(EXE3) -lm
+$(EXE4): Factorial.o  
+	$(GCC) $(LD_FLAGS) Factorial.o   -o $(EXE4)
 
 
 #recomplie c objects if headers change
